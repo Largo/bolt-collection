@@ -1795,7 +1795,7 @@ class Bag implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
      *
      * @inheritdoc
      */
-    public function getIterator(): mixed
+    public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->items);
     }
