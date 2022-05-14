@@ -1795,7 +1795,7 @@ class Bag implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
      *
      * @inheritdoc
      */
-    public function getIterator(): Traversable
+    public function getIterator(): mixed
     {
         return new \ArrayIterator($this->items);
     }
@@ -1851,7 +1851,7 @@ class Bag implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
      *
      * @inheritdoc
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         //throw new BadMethodCallException(sprintf('Cannot modify items on an %s', __CLASS__));
 
