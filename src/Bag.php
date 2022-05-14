@@ -231,7 +231,7 @@ class Bag implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
      *
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return count($this->items);
     }
@@ -1794,7 +1794,7 @@ class Bag implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
      *
      * @inheritdoc
      */
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new \ArrayIterator($this->items);
     }
@@ -1806,7 +1806,7 @@ class Bag implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
      *
      * @inheritdoc
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return $this->items;
     }
@@ -1818,7 +1818,7 @@ class Bag implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
      *
      * @inheritdoc
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): bool
     {
         return $this->has($offset);
     }
@@ -1830,7 +1830,7 @@ class Bag implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
      *
      * @inheritdoc
      */
-    public function &offsetGet($offset)
+    public function &offsetGet(mixed $offset) : mixed
     {
         // Returning values by reference is deprecated, but we have no way of knowing here.
         //return $this->get($offset);
@@ -1870,7 +1870,7 @@ class Bag implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
      *
      * @inheritdoc
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         //throw new BadMethodCallException(sprintf('Cannot remove items from an %s', __CLASS__));
 
