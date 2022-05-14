@@ -209,7 +209,7 @@ class MutableBag extends Bag
      *
      * @inheritdoc
      */
-    public function &offsetGet($offset)
+    public function &offsetGet($offset): mixed
     {
         $result = null;
         if (isset($this->items[$offset])) {
@@ -226,7 +226,7 @@ class MutableBag extends Bag
      *
      * @inheritdoc
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if ($offset === null) {
             $this->add($value);
@@ -242,7 +242,7 @@ class MutableBag extends Bag
      *
      * @inheritdoc
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         $this->remove($offset);
     }
