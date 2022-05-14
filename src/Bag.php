@@ -6,6 +6,7 @@ use ArrayAccess;
 use Bolt\Common\Assert;
 use Bolt\Common\Deprecated;
 use Bolt\Common\Thrower;
+use Bolt\Collection\Traversable;
 use Countable;
 use ErrorException;
 use InvalidArgumentException;
